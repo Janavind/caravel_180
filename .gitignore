@@ -6,3 +6,12 @@
 *.lst
 *.vcd
 *.gtkw
+/caravel/
+/opt/caravel_180/dependencies/
+/deps/
+/mgmt_core_wrapper/
+/openlane/user_proj_example/1
+/opt/caravel_180/venv/
+
+debug.log
+debug.log

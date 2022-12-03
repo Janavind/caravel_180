@@ -30,14 +30,14 @@ set ::env(CLOCK_NET) "counter.clk"
 set ::env(CLOCK_PERIOD) "24.0"
 
 set ::env(FP_SIZING) absolute
-set ::env(DIE_AREA) "0 0 900 600"
+set ::env(DIE_AREA) "0 0 2900  3000"
 
 set ::env(FP_PIN_ORDER_CFG) $::env(DESIGN_DIR)/pin_order.cfg
 
 set ::env(PL_BASIC_PLACEMENT) 0
-set ::env(PL_TARGET_DENSITY) 0.45
+set ::env(PL_TARGET_DENSITY) 0.75
 
-set ::env(FP_CORE_UTIL) 40
+set ::env(FP_CORE_UTIL) 20
 
 set ::env(SYNTH_MAX_FANOUT) 4
 
