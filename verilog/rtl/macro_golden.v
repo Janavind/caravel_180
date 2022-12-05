@@ -27,9 +27,9 @@ module macro_golden  (
 		
 		// // Logic Analyzer Signals
 	`ifdef USE_LA
-		 input  wire [127:0] la_data_in,
-		 output wire [127:0] la_data_out,
-		 input  wire [127:0] la_oenb,
+		 input  wire [63:0] la_data_in,
+		 output wire [63:0] la_data_out,
+		 input  wire [63:0] la_oenb,
 	 `endif	
 		// // IOs
 	`ifdef USE_IO

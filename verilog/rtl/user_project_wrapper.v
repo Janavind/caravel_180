@@ -17,14 +17,14 @@
 
 `default_nettype none
 
-`ifndef MPRJ_IO_PADS
-	`define MPRJ_IO_PADS 38
-`endif
+//`ifndef MPRJ_IO_PADS
+//	`define MPRJ_IO_PADS 38
+//`endif
 
 module user_project_wrapper (
-	`ifdef USE_POWER_PINS
-		inout vdd,	// User area 1 digital ground
-		inout vss,	// User area 2 digital ground
+`ifdef USE_POWER_PINS
+    inout vdd,	// User area 1 digital ground
+    inout vss,	// User area 2 digital ground
 	`endif
 
 // Wishbone Slave ports (WB MI A)
@@ -41,9 +41,9 @@ module user_project_wrapper (
  output [31:0] wbs_dat_o,
 
 // Logic Analyzer Signals
- input  [127:0] la_data_in,
- output [127:0] la_data_out,
- input  [127:0] la_oenb,
+ input  [63:0] la_data_in,
+ output [63:0] la_data_out,
+ input  [63:0] la_oenb,
 
 // IOs
  input  [`MPRJ_IO_PADS-1:0] io_in,
@@ -58,7 +58,6 @@ module user_project_wrapper (
 // User maskable interrupt signals
  output [2:0] user_irq
  );
-
  /*--------------------------------------*/
  /* User project is instantiated  here   */
  /*--------------------------------------*/
@@ -72,7 +71,7 @@ module user_project_wrapper (
 	 assign la1_data_in = la_data_in[63:32];
 	 assign la1_data_out = la_data_out[63:32];
 	 assign la1_oenb = la_oenb[63:32];
-	
+/*	
 	 wire [31: 0] la2_data_in, la2_data_out, la2_oenb;
 	 assign la2_data_in = la_data_in[95:64];
 	 assign la2_data_out = la_data_out[95:64];
@@ -82,7 +81,7 @@ module user_project_wrapper (
 	 assign la3_data_in = la_data_in[127:96];
 	 assign la3_data_out = la_data_out[127:96];
 	 assign la3_oenb = la_oenb[127:96];
-
+*/
 /*
  macro_7 u_macro_7 (
 
